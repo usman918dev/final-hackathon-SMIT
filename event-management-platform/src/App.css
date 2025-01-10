@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #61dafb;
+}
+.form > * {
+  display: flex;
+  height: 20px;
+  width: 1;
+}

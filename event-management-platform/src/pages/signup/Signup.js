@@ -29,13 +29,14 @@ const Signup = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       {/* Form Fields */}
       <input
         type="text"
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        
       />
       <input
         type="email"

@@ -9,3 +9,5 @@ router.post('/create', authenticateToken, (req, res, next) => {
     console.log('POST /create route hit');
     next();
   }, createEvent);
+  
+module.exports = router;
