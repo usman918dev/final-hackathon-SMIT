@@ -29,29 +29,36 @@ const Signup = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='form'>
-      {/* Form Fields */}
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Sign Up</button>
-    </form>
+    <div className='signupPage'>
+      <form onSubmit={handleSubmit} className='form'>
+        {/* Form Fields */}
+        <p>SignUp Page</p>
+        <input
+          className='input'
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+
+        />
+        <input
+          className='input'
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          className='input'
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <p className='loginR'>Already have an ?<a>Account</a></p>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
   );
 };
 

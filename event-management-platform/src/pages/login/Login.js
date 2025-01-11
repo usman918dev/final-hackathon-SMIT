@@ -14,7 +14,6 @@ const Login = () => {
     e.preventDefault();
 
     const resultAction = await dispatch(login({ email, password }));
-
     // Check if login was successful and navigate to home page
     if (login.fulfilled.match(resultAction)) {
       navigate('/home'); // Replace '/home' with your actual home route
