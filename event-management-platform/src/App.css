@@ -43,15 +43,57 @@
   font-family: sans-serif;
   font-size: 1.8rem;
 } */
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ }
 .signupPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-height: 100vh;
+  background-image: url('./assets/jky.jpg');
+  /* background: linear-gradient(to bottom right,#cfe2ff, #b5e0e6); */
+  /* width: 100%;
   height: 100vh;
-  
+  background-color: rgb(108, 255, 248); */
 }
+.signup-form{
+  /* background-color: red; */
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.777);
 
+  width: 350px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button{
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+/* 
 .form {
   background-color: rgba(143, 245, 253, 0.623);
   padding: 20px;
@@ -61,9 +103,8 @@
 }
 
 .input {
-  /* height: 60px; */
-  font-size: 1rem;
-  padding: 8px;
+  font-size: 14px;
+  padding: 12px;
   width: 300px;
   border: 1px solid rgba(115, 30, 30, 0.379) ;
   border-radius: 4px;
@@ -75,10 +116,8 @@
 .input:focus{
   border: 1.6px solid rgba(115, 30, 30, 0.379);
   outline: none;
-  /* background-color: red; */
 }
 .form>* {
-  /* margin: 30px; */
   display: flex;
   height: 20px;
   width: 1;
@@ -86,4 +125,4 @@
 .loginR{
   text-align: center;
   margin: auto;
-}
+} */
