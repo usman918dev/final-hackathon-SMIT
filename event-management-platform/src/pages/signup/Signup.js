@@ -1,5 +1,6 @@
+// import './Signup.css';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useState } from 'react';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -8,9 +9,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('====================================');
-    console.log('Signup form submitted:', username,);
-    console.log('====================================');
+    console.log('Signup form submitted:', username, email, password);
 
     try {
       const response = await axios.post('http://localhost:5000/api/auth/signup', {
@@ -22,7 +21,6 @@ const Signup = () => {
       console.log('User signed up successfully:', response.data);
       // Store the token in localStorage
       localStorage.setItem('token', response.data.token);
-      console.log('User signed up successfully:', response.data);
     } catch (error) {
       console.error('Signup error:', error.response.data);
     }
@@ -32,7 +30,6 @@ const Signup = () => {
     <div className='signupPage'>
       <div className='signup-form'>
         <h2>Sign Up</h2>
-
         <form onSubmit={handleSubmit} className='form'>
           <div className='form-group'>
             <label htmlFor='username'>Username:</label>
@@ -42,11 +39,10 @@ const Signup = () => {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-
             />
           </div>
           <div className='form-group'>
-            <label>Email:</label>
+            <label htmlFor='email'>Email:</label>
             <input
               className='input'
               type="email"
@@ -55,9 +51,8 @@ const Signup = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-
           <div className='form-group'>
-            <label>Password:</label>
+            <label htmlFor='password'>Password:</label>
             <input
               className='input'
               type="password"
@@ -66,7 +61,6 @@ const Signup = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          {/* <p className='loginR'>Already have an ?<a>Account</a></p> */}
           <button type="submit">Sign Up</button>
         </form>
       </div>
