@@ -23,8 +23,11 @@ export const createEvent = async (eventData) => {
 
 // Function to fetch all events
 export const fetchAllEvents = async () => {
+  console.log('====================================');
+  console.log('usman is calling ');
   try {
-    const response = await axios.get(`${API_URL}`);
+    const response = await axios.get(`${API_URL}/all`);
+    console.log('====================================');
     return response.data; // Assuming your backend returns all events
   } catch (error) {
     console.error("Error fetching events:", error.response?.data || error.message);

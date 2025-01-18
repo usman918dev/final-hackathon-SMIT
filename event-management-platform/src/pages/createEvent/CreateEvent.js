@@ -164,9 +164,11 @@ const CreateEvent = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
-
+    console.log('====================================');
     const token = localStorage.getItem('token'); // Get the JWT token from localStorage
-
+    console.log(token);
+    console.log('====\================================');
+    
     try {
       const response = await axios.post('http://localhost:5000/api/events/create', formData, {
         headers: {
