@@ -8,8 +8,7 @@ const createEvent = async (req, res) => {
   if (!title || !description || !date || !location || !category) {
     return res.status(400).json({ success: false, message: 'All fields are required' });
   }
-console.log('====================================');
-console.log('====================================');
+  console.log('====================================');
   try {
     const newEvent = new Event({
       title,
@@ -17,11 +16,13 @@ console.log('====================================');
       date,
       location,
       category,
-      createdBy: req.user.id,
+      user: req.user.id,
+
     });
+    console.log('==evbfgnh==================================');
 
-    const savedEvent = await newEvent.save();
-
+    console.log("35");
+    const savedEvent = await newEvent.save(); // Use save() instead of create()
     res.status(201).json({
       success: true,
       message: 'Event created successfully',
@@ -44,4 +45,21 @@ const getEvents = async (req, res) => {
   }
 };
 
-module.exports = { createEvent, getEvents };
+const getEvent = async (id, res) => {
+  // const id  = id.params; // Access id from id.params for a GET iduest
+  console.log("id.params", id);
+
+  try {
+    const event = await Event.findById(id); // Pass id directly to findById
+    if (!event) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+    res.status(200).json(event);
+  } catch (error) {
+    console.error('Error fetching event:', error.message);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+
+module.exports = { createEvent, getEvents, getEvent };

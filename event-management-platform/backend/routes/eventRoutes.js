@@ -1,5 +1,5 @@
 const express = require('express');
-const { createEvent, getEvents } = require('../controllers/eventController');
+const { createEvent, getEvents, getEvent } = require('../controllers/eventController');
 const authenticateToken = require('../middleware/authMiddleware');
 
 const router = express.Router();
@@ -15,5 +15,9 @@ router.get('/all', authenticateToken, (req, res) => {
   console.log('GET /all route hit');
   getEvents(req, res);
 });
-
+router.get('/event/:id', authenticateToken, (req, res) => {
+  const { id } = req.params;
+  console.log("req.params", id);
+  getEvent(id, res); // Pass only the id to the function
+});
 module.exports = router;
