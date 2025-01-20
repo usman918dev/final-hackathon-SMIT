@@ -21,16 +21,42 @@ export const createEvent = async (eventData) => {
   }
 };
 
-// Function to fetch all events
+
+
 export const fetchAllEvents = async () => {
-  console.log('====================================');
-  console.log('usman is calling ');
+  const token = localStorage.getItem('token');
   try {
-    const response = await axios.get(`${API_URL}/all`);
-    console.log('====================================');
-    return response.data; // Assuming your backend returns all events
+    const response = await axios.get(`${API_URL}/all`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log('Response received:', response.data);
+    return response.data;
   } catch (error) {
-    console.error("Error fetching events:", error.response?.data || error.message);
+    console.error("Error fetching events:", error);
+    console.error("Error details:", error.response?.data || error.message);
+    return { success: false, error: error.response?.data || error.message || "Unknown error" };
+  }
+};
+// const API_URL = 'http://localhost:5000/api/events';
+
+export const fetchSpecificEventDetails = async (Id) => {
+  const token = localStorage.getItem('token');
+  
+  try {
+    // Use axios.get with the event ID included in the URL, not as a request body
+    const response = await axios.get(`${API_URL}/event/${Id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    console.log('Event data received:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching event details:", error);
+    console.error("Error details:", error.response?.data || error.message);
     return { success: false, error: error.response?.data || error.message || "Unknown error" };
   }
 };

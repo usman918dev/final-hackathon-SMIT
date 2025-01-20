@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchEventDetails } from '../../redux/slices/eventSlice';
 
 export default function EventDetails() {
-  const { eventId } = useParams();
-  const [event, setEvent] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const { id } = useParams(); // Get the event ID from the URL
+  const dispatch = useDispatch();
+  const event = useSelector((state) => state.events.events.find((e) => e._id === id));
+  const loading = useSelector((state) => state.events.status === 'loading');
+  const error = useSelector((state) => state.events.error);
 
   useEffect(() => {
-    const fetchEventDetails = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5000/api/events/${eventId}`);
-        setEvent(response.data);
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to fetch event details');
-        setLoading(false);
-      }
-    };
-
-    fetchEventDetails();
-  }, [eventId]);
+    // Only fetch the event if it's not already present in the store
+    if (!event) {
+      dispatch(fetchEventDetails(id)); // Fetch event details if not already present in the store
+    }
+  }, [dispatch, id, event]);
 
   if (loading) {
     return <div className="event-details-container">Loading...</div>;
@@ -31,19 +25,16 @@ export default function EventDetails() {
     return <div className="event-details-container">{error}</div>;
   }
 
+  if (!event) {
+    return <div className="event-details-container">Event not found</div>;
+  }
+
   return (
     <div className="event-details-container">
-      <h1>{event.name}</h1>
-      <p><strong>Date:</strong> {event.date}</p>
-      <p><strong>Location:</strong> {event.location}</p>
-      <p><strong>Description:</strong> {event.description}</p>
-      <p><strong>Category:</strong> {event.category}</p>
-      <h1>Logo</h1>
-      <p><strong>Date:</strong> 12-24-2024</p>
-      <p><strong>Location:</strong> karachi</p>
-      <p><strong>Description:</strong>somethings details about written here is working i=on</p>
-      <p><strong>Category:</strong> noone</p>
-
+      <h1>{event.title}</h1>
+      <p>{event.description}</p>
+      <p>{event.location}</p>
+      <p>{event.category}</p>
     </div>
   );
 }

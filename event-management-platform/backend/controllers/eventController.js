@@ -1,5 +1,5 @@
 const Event = require('../models/Event');
-
+// const Eventhome = require('../models/Event')
 // Controller to handle event creation
 console.log("jhgfh");
 const createEvent = async (req, res) => {

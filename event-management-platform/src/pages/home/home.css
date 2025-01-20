@@ -1,0 +1,113 @@
+body {
+    /* background: url('your-background-image.jpg') no-repeat center center fixed; */
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .homePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .welcome-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 400px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .welcome-container h1 {
+    margin-bottom: 20px;
+  }
+  
+  .welcome-container p {
+    margin-bottom: 20px;
+  }
+  
+  .event-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .event-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .event-item h3 {
+    margin: 0;
+  }
+  
+  .event-item p {
+    margin: 5px 0 0;
+  }
+  
+  .event-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .event-item button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 600px) {
+    .welcome-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .event-item {
+      padding: 8px;
+      width: 100%;
+    }
+  
+    .event-item h3 {
+      font-size: 1.2em;
+    }
+  
+    .event-item button {
+      padding: 8px 16px;
+    }
+  }
+  @media (max-width: 320px) {
+    .welcome-container {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .event-item {
+      padding: 8px;
+      width: 100%;
+    }
+  
+    .event-item h3 {
+      font-size: 1.2em;
+    }
+  
+    .event-item button {
+      padding: 8px 16px;
+    }
+  }
