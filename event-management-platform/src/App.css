@@ -307,3 +307,77 @@ body {
 .event-details-container p {
   margin-bottom: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  margin: 15px;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.event-card-content {
+  padding: 15px;
+}
+
+.event-card-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.event-card-date,
+.event-card-location {
+  font-size: 1rem;
+  color: #777;
+  margin: 5px 0;
+}
+
+.event-card-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 10px 0;
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-card-btn {
+  background-color: #ff6f61;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-card-btn:hover {
+  background-color: #e65c4f;
+}

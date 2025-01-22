@@ -9,14 +9,24 @@ export const login = createAsyncThunk('auth/login', async (credentials, { reject
     
     // Store token in localStorage
     localStorage.setItem('token', token);
-    
-    console.log('====================================');
-    console.log('Login form submitted:', credentials);
-    console.log('====================================');
+
     return token;
   } catch (error) {
-    // Return error message
     return rejectWithValue(error.response?.data?.message || 'Login failed');
+  }
+});
+
+// Thunk for signup
+export const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
+  try {
+    const response = await axios.post('http://localhost:5000/api/auth/signup', userData);
+    const { token } = response.data;
+
+    localStorage.setItem('token', token);
+
+    return token;
+  } catch (error) {
+    return rejectWithValue(error.response?.data?.message || 'Signup failed');
   }
 });
 
@@ -43,6 +53,14 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(login.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(signup.fulfilled, (state, action) => {
+        state.token = action.payload;
+        state.isAuthenticated = true;
+        state.error = null;
+      })
+      .addCase(signup.rejected, (state, action) => {
         state.error = action.payload;
       });
   },

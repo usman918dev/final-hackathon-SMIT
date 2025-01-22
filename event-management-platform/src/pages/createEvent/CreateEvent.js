@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import storage from '../../config/firebaseConfig';
 
 const CreateEvent = () => {
   const [formData, setFormData] = useState({
@@ -11,8 +12,14 @@ const CreateEvent = () => {
     category: '',
   });
 
+  const [image, setImage] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
 
   // Handle form input changes
   const handleChange = (e) => {
@@ -25,22 +32,67 @@ const CreateEvent = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
-    console.log('====================================');
     const token = localStorage.getItem('token'); // Get the JWT token from localStorage
-    console.log(token);
-    console.log('====\================================');
-    
+
     try {
-      const response = await axios.post('http://localhost:5000/api/events/create', formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log('Event created:', response.data);
-      setLoading(false);
+      if (image) {
+        setIsUploading(true);
+        const storageRef = ref(storage, `event-images/${image.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, image);
+
+        uploadTask.on(
+          'state_changed',
+          (snapshot) => {
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log(`Upload is ${progress}% done`);
+          },
+          (error) => {
+            console.error('Error uploading image:', error);
+            setError('Failed to upload image');
+            setIsUploading(false);
+            setLoading(false);
+          },
+          async () => {
+            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+            console.log('Image uploaded successfully, URL:', downloadURL);
+
+            // Add the image URL to the formData
+            const updatedFormData = { ...formData, imageUrl: downloadURL };
+
+            // Send form data to the server
+            const response = await axios.post(
+              'http://localhost:5000/api/events/create',
+              updatedFormData,
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+            console.log('Event created:', response.data);
+            setLoading(false);
+            setIsUploading(false);
+          }
+        );
+      } else {
+        // If no image, submit form data as is
+        const response = await axios.post(
+          'http://localhost:5000/api/events/create',
+          formData,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log('Event created:', response.data);
+        setLoading(false);
+      }
     } catch (err) {
+      console.error('Error creating event:', err);
       setError('Failed to create event');
       setLoading(false);
+      setIsUploading(false);
     }
   };
 
@@ -102,8 +154,17 @@ const CreateEvent = () => {
             required
           />
         </div>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Creating...' : 'Create Event'}
+        <div className="form-group">
+          <label>Image:</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            required
+          />
+        </div>
+        <button type="submit" disabled={loading || isUploading}>
+          {loading || isUploading ? 'Processing...' : 'Create Event'}
         </button>
       </form>
     </div>

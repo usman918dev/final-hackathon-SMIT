@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../redux/slices/eventSlice';
 import { useNavigate } from 'react-router-dom';
+import EventCard from '../../components/event/EventCard';
 import "./home.css";
+
 const Home = () => {
   const dispatch = useDispatch();
   const events = useSelector((state) => state.events.events);  // Get all events from Redux
@@ -27,7 +29,7 @@ const Home = () => {
       <ul className="event-list">
         {events.map(event => (
           <li key={event._id} className="event-item">
-            <h3>{event.title}</h3>
+            <EventCard key={event._id} event={event} imageUrl={event.imageUrl} />
             <button onClick={() => specificEventDetail(event._id)}>Details</button>
           </li>
         ))}

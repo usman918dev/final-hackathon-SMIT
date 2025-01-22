@@ -3,7 +3,7 @@ const Event = require('../models/Event');
 // Controller to handle event creation
 console.log("jhgfh");
 const createEvent = async (req, res) => {
-  const { title, description, date, location, category } = req.body;
+  const { title, description, date, location, category, imageUrl  } = req.body;
 
   if (!title || !description || !date || !location || !category) {
     return res.status(400).json({ success: false, message: 'All fields are required' });
@@ -16,6 +16,7 @@ const createEvent = async (req, res) => {
       date,
       location,
       category,
+      imageUrl,
       user: req.user.id,
 
     });

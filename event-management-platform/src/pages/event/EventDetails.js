@@ -34,6 +34,8 @@ export default function EventDetails() {
       <h1>{event.title}</h1>
       <p>{event.description}</p>
       <p>{event.location}</p>
+      {event.imageUrl && <img src={event.imageUrl} alt={event.title} className="event-image" />}
+
       <p>{event.category}</p>
     </div>
   );
