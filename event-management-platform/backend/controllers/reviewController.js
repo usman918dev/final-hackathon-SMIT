@@ -18,7 +18,7 @@ const createReview = async (req, res) => {
       eventId,
       rating,
       comment,
-      userId: req.user.id, // Assuming req.user.id is set by the authentication middleware
+      userId: req.user.id, 
     });
 
     await newReview.save();

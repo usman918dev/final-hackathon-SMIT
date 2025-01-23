@@ -1,34 +1,38 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import api from '../../services/api'; 
 
-// Thunk for login
-export const login = createAsyncThunk('auth/login', async (credentials, { rejectWithValue }) => {
-  try {
-    const response = await axios.post('http://localhost:5000/api/auth/login', credentials);
-    const { token } = response.data;
-    
-    // Store token in localStorage
-    localStorage.setItem('token', token);
+export const login = createAsyncThunk(
+  'auth/login',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const response = await api.post('/auth/login', credentials); // Use Axios instance
+      const { token } = response.data;
 
-    return token;
-  } catch (error) {
-    return rejectWithValue(error.response?.data?.message || 'Login failed');
+      localStorage.setItem('token', token);
+
+      return token;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || 'Login failed');
+    }
   }
-});
+);
 
-// Thunk for signup
-export const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
-  try {
-    const response = await axios.post('http://localhost:5000/api/auth/signup', userData);
-    const { token } = response.data;
 
-    localStorage.setItem('token', token);
+export const signup = createAsyncThunk(
+  'auth/signup',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const response = await api.post('/auth/signup', userData); // Use Axios instance
+      const { token } = response.data;
 
-    return token;
-  } catch (error) {
-    return rejectWithValue(error.response?.data?.message || 'Signup failed');
+      localStorage.setItem('token', token);
+
+      return token;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || 'Signup failed');
+    }
   }
-});
+);
 
 // Auth slice
 const authSlice = createSlice({
@@ -43,6 +47,10 @@ const authSlice = createSlice({
       state.token = null;
       state.isAuthenticated = false;
       localStorage.removeItem('token');
+    },
+    clearAuth: (state) => {
+      state.error = null; // Clear any previous errors
+      state.isAuthenticated = false; // Reset state
     },
   },
   extraReducers: (builder) => {
@@ -66,5 +74,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout,clearAuth } = authSlice.actions;
 export default authSlice.reducer;

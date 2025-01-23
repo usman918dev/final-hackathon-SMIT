@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 // Register new user
 const signup = async (req, res) => {
-  const { email, password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
@@ -13,6 +13,7 @@ const signup = async (req, res) => {
     }
 
     const user = await User.create({
+      username,
       email,
       password,
     });
