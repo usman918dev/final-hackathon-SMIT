@@ -47,9 +47,7 @@ const getEvents = async (req, res) => {
 };
 
 const getEvent = async (id, res) => {
-  // const id  = id.params; // Access id from id.params for a GET iduest
   console.log("id.params", id);
-
   try {
     const event = await Event.findById(id); // Pass id directly to findById
     if (!event) {
@@ -61,6 +59,5 @@ const getEvent = async (id, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
-
 
 module.exports = { createEvent, getEvents, getEvent };

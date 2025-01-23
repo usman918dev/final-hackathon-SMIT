@@ -48,4 +48,15 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { signup, login };
+// Logout user
+const logout = (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).json({ message: 'Failed to logout' });
+    }
+    res.clearCookie('connect.sid'); // Adjust if using a different cookie name
+    res.status(200).json({ message: 'Logged out successfully' });
+  });
+};
+
+module.exports = { signup, login, logout };

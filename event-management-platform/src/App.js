@@ -6,6 +6,8 @@ import Signup from './pages/signup/Signup';
 import Home from './pages/home/Home';
 import CreateEvent from './pages/createEvent/CreateEvent';
 import EventDetails from './pages/event/EventDetails';
+import ReviewForm from './components/ReviewForm.js';
+import Reviewpage from './pages/review/Reviewpage';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/home/create-event" element={<CreateEvent />} />
         <Route path="/event-details/:id" element={<EventDetails />} />
+        <Route path="/event-details/review/:id" element={<ReviewForm />} />
+        <Route path="/review/:id" element={<Reviewpage />} />
       </Routes>
     </Router>
   );

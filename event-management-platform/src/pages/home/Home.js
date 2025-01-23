@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../redux/slices/eventSlice';
 import { useNavigate } from 'react-router-dom';
 import EventCard from '../../components/event/EventCard';
+import Navbar from '../../components/navbar/Navbar'; // Import Navbar
 import "./home.css";
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar /> {/* Add Navbar */}
       <h2>Upcoming Events</h2>
       <ul className="event-list">
         {events.map(event => (
