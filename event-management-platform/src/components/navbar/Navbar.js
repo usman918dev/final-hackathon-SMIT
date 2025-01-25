@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './navbar.css';
+import UserProfile from '../userprofile/UserProfile';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -32,7 +33,8 @@ const Navbar = () => {
         </select>
       </div>
       <div className="navbar-logout">
-        <button onClick={handleLogout}>Logout</button>
+        {/* <button onClick={handleLogout}>Logout</button> */}
+        <UserProfile/>
       </div>
     </nav>
   );
