@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchUser } from "../../services/userProfileService";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-//   useEffect(() => {
-//     // Fetch user data from your local database
-//     const fetchUser = async () => {
-//       try {
-//         const response = await axios.get("http://localhost:5000/api/users/me");
-//         setUser(response.data);
-//         setLoading(false);
-//       } catch (err) {
-//         setError("Failed to fetch user data");
-//         setLoading(false);
-//       }
-//     };
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const user = await fetchUser();
+        setUser(user);
+        setLoading(false);
+      } catch (err) {
+        setError("Failed to fetch user data");
+        setLoading(false);
+      }
+      {}
+    };
+    getUser();
+  }, []);
 
-//     fetchUser();
-//   }, []);
-
-//   if (loading) return <p>Loading...</p>;
-//   if (error) return <p>{error}</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
-    <div >
-      <h2 >User Profile</h2>
-      {/* {user ? (
+    <div>
+      <h2>User Profile</h2>
+      {user ? (
         <div>
-          <p><strong>Name:</strong> {user.name}</p>
+          <p><strong>Name:</strong> {user.user.username}</p>
+          <p><strong>Email:</strong> {user.user.email}</p>
         </div>
       ) : (
         <p>No user data available</p>
-      )} */}
+      )}
     </div>
   );
 };

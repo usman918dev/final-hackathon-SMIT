@@ -1,6 +1,6 @@
 const express = require('express');
 const { createEvent, getEvents, getEvent } = require('../controllers/eventController');
-const { createReview, getReviews } = require('../controllers/reviewController');
+const { createReview, getReviews, getUsername } = require('../controllers/reviewController');
 const authenticateToken = require('../middleware/authMiddleware');
 
 const router = express.Router();
@@ -29,5 +29,5 @@ router.post('/reviews/:eventId', authenticateToken, createReview);
 
 // Route to get all reviews for a specific event
 router.get('/reviews/:eventId', authenticateToken, getReviews);
-
+router.get('/userProfile', authenticateToken, getUsername);
 module.exports = router;

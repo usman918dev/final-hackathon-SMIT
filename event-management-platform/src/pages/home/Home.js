@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import EventCard from '../../components/event/EventCard';
 import Navbar from '../../components/navbar/Navbar'; // Import Navbar
 import "./home.css";
+import UserProfile from '../../components/userprofile/UserProfile';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const Home = () => {
   const status = useSelector((state) => state.events.status);  // Get the status (loading, etc.)
   const navigate = useNavigate();
 
+
+  
   // Fetch all events when the component mounts or refreshes
   useEffect(() => {
     if (status === 'idle') {
@@ -36,6 +39,7 @@ const Home = () => {
           </li>
         ))}
       </ul>
+      <UserProfile/>
     </div>
   );
 };

@@ -48,3 +48,46 @@
 .navbar button:hover {
   background-color: #cc0000;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-logo img {
+    height: 30px;
+  }
+
+  .navbar-search input,
+  .navbar-location select,
+  .navbar-logout button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navbar button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-logo img {
+    height: 25px;
+  }
+
+  .navbar-search input,
+  .navbar-location select,
+  .navbar-logout button {
+    padding: 8px;
+  }
+
+  .navbar button {
+    padding: 8px;
+  }
+}

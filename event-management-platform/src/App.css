@@ -136,83 +136,9 @@ body {
 
 
 
-/* 
-body {
-  
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.homePage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-}
-
-.welcome-container {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 400px;
-  text-align: center;
-  color: #fff;
-}
-
-.welcome-container h1 {
-  margin-bottom: 20px;
-}
-
-.welcome-container p {
-  margin-bottom: 20px;
-}
-
-.event-list {
-  list-style: none;
-  padding: 0;
-}
-
-.event-item {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.event-item h3 {
-  margin: 0;
-}
-
-.event-item p {
-  margin: 5px 0 0;
-} */
 
 
 
-
-
-
-body {
-  /* background: url('your-background-image.jpg') no-repeat center center fixed; */
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
 
 .create-event-container {
   background: rgba(255, 255, 255, 0.1);
@@ -276,16 +202,7 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
-body {
-  /* background: url('your-background-image.jpg') no-repeat center center fixed; */
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+
 
 .event-details-container {
   background: rgba(255, 255, 255, 0.1);

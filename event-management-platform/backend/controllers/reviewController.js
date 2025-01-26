@@ -1,5 +1,7 @@
 const Review = require('../models/reviewModel');
 const Event = require('../models/Event');
+const User = require('../models/User');
+const UserProfile = require('../models/userProfile'); // Ensure correct model is imported
 
 // Controller to create a new review
 const createReview = async (req, res) => {
@@ -48,7 +50,22 @@ const getReviews = async (req, res) => {
   }
 };
 
+const getUsername = async (req, res) => {
+  try {
+    const user = await UserProfile.findById(req.user.id); // Ensure correct model is used
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json(user); // Return user data directly
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+
 module.exports = {
   createReview,
   getReviews,
+  getUsername
 };
