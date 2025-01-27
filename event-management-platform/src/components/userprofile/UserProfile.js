@@ -29,8 +29,8 @@ const UserProfile = () => {
       <h2>User Profile</h2>
       {user ? (
         <div>
-          <p><strong>Name:</strong> {user.user.username}</p>
-          <p><strong>Email:</strong> {user.user.email}</p>
+          <p><strong>Name:</strong> {user.username}</p>
+          <p><strong>Email:</strong> {user.email}</p>
         </div>
       ) : (
         <p>No user data available</p>

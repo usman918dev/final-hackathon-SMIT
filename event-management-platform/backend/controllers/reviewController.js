@@ -52,7 +52,9 @@ const getReviews = async (req, res) => {
 
 const getUsername = async (req, res) => {
   try {
-    const user = await UserProfile.findById(req.user.id); // Ensure correct model is used
+    console.log("hit routr", req.user.id);
+    const user = await User.findById(req.user.id); // Ensure correct model is used
+    
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
