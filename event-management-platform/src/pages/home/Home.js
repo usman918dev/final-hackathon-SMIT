@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../redux/slices/eventSlice';
 import { useNavigate } from 'react-router-dom';
 import EventCard from '../../components/event/EventCard';
-import Navbar from '../../components/navbar/Navbar'; // Import Navbar
+import Navbar from '../../components/navbar/Navbar'; 
 import "./home.css";
 import UserProfile from '../../components/userprofile/UserProfile';
 
