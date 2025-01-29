@@ -2,20 +2,24 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../services/api'; 
 
 export const login = createAsyncThunk(
-  'auth/login',
+  "auth/login",
   async (credentials, { rejectWithValue }) => {
     try {
-      const response = await api.post('/auth/login', credentials); // Use Axios instance
-      const { token } = response.data;
+      const response = await api.post("/auth/login", credentials);
+      const { token, userId } = response.data; // ✅ Get userId from response
 
-      localStorage.setItem('token', token);
-
-      return token;
+      // ✅ Store both token and userId in localStorage
+      localStorage.setItem("token", token);
+      localStorage.setItem("userId", userId);
+      console.log("userId", userId);
+      
+      return { token, userId }; // ✅ Return both for Redux state
     } catch (error) {
-      return rejectWithValue(error.response?.data?.message || 'Login failed');
+      return rejectWithValue(error.response?.data?.message || "Login failed");
     }
   }
 );
+
 
 
 export const signup = createAsyncThunk(

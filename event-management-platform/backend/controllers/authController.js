@@ -43,11 +43,13 @@ const login = async (req, res) => {
       expiresIn: '1h',
     });
 
-    res.json({ token });
+    // ✅ Send userId along with token
+    res.json({ token, userId: user._id });
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
 
 // Logout user
 const logout = (req, res) => {
