@@ -34,3 +34,10 @@ export const fetchSpecificEventDetails = async (id) => {
     return { success: false, error: error.response?.data || error.message || "Unknown error" };
   }
 };
+
+export const getUserName = async () => {
+  const username = await api.get("http://localhost:5000/api/user/username")
+  console.log(username.data);
+
+  return username.data
+}

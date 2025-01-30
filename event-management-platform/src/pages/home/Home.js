@@ -1,35 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react'; // Add useState
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../redux/slices/eventSlice';
 import { useNavigate } from 'react-router-dom';
 import EventCard from '../../components/event/EventCard';
-import Navbar from '../../components/navbar/Navbar'; 
+import Navbar from '../../components/navbar/Navbar';
 import "./home.css";
 import UserProfile from '../../components/userprofile/UserProfile';
+import { getUserName } from '../../services/events';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const events = useSelector((state) => state.events.events);  // Get all events from Redux
-  const status = useSelector((state) => state.events.status);  // Get the status (loading, etc.)
+  const events = useSelector((state) => state.events.events);
+  const status = useSelector((state) => state.events.status);
   const navigate = useNavigate();
+  const [username, setUsername] = useState(''); // Add state for username
 
-
-  
-  // Fetch all events when the component mounts or refreshes
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchEvents());
     }
-  }, [dispatch, status]);  // Only dispatch when status is idle
+  }, [dispatch, status]);
 
-  // Navigate to event details when clicked
   const specificEventDetail = (id) => {
     navigate(`/event-details/${id}`);
   };
 
+  const handleGetUserName = async () => {
+    try {
+      const username = await getUserName();
+      setUsername(username); // Update state
+    } catch (error) {
+      console.error("Error fetching username:", error);
+    }
+  };
+
   return (
     <div>
-      <Navbar /> {/* Add Navbar */}
+      <Navbar />
       <h2>Upcoming Events</h2>
       <ul className="event-list">
         {events.map(event => (
@@ -39,7 +46,9 @@ const Home = () => {
           </li>
         ))}
       </ul>
-      <UserProfile/>
+      <UserProfile />
+      <button onClick={handleGetUserName}>Get User Name</button>
+      {username && <h1>{username}</h1>}
     </div>
   );
 };
