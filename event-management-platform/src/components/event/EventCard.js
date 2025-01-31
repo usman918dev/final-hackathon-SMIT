@@ -1,4 +1,5 @@
 import React from 'react';
+import ThreeDotButton from '../3dotbtn/ThreeDotBtn';
 
 function EventCard({ event }) {
   return (
@@ -12,6 +13,7 @@ function EventCard({ event }) {
         <p className="event-card-location">{event.location}</p>
         <p className="event-card-description">{event.description}</p>
         <button className="event-card-btn">RSVP Now</button>
+        <ThreeDotButton/>
       </div>
 
     </div>

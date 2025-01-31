@@ -1,0 +1,45 @@
+/* Container for the button and dropdown */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style for the 3-dot button */
+  .three-dot-button {
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  /* Style for the dropdown menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 30px; /* Position below the button */
+    right: 0;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    width: 150px;
+    border-radius: 5px;
+  }
+  
+  /* Style for each option in the dropdown */
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu ul li {
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .dropdown-menu ul li:hover {
+    background-color: #f1f1f1;
+  }
+  

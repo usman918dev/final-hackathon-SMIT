@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './navbar.css';
-// import UserProfile from '../userprofile/userProfile';
-// import UserProfile from '../userprofile/UserProfile';
+
 
 const Navbar = () => {
   const navigate = useNavigate();
