@@ -8,12 +8,14 @@ import CreateEvent from './pages/createEvent/CreateEvent';
 import EventDetails from './pages/event/EventDetails';
 import ReviewForm from './components/ReviewForm.js';
 import Reviewpage from './pages/review/Reviewpage';
+import Try from './pages/login/Try.js';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/try" element={<Try/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />

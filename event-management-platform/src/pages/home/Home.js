@@ -41,7 +41,7 @@ const Home = () => {
       <ul className="event-list">
         {events.map(event => (
           <li key={event._id} className="event-item">
-            {/* <EventCard key={event._id} event={event} imageUrl={event.imageUrl} /> */}
+            <EventCard key={event._id} event={event} imageUrl={event.imageUrl} />
             <button onClick={() => specificEventDetail(event._id)}>Details</button>
           </li>
         ))}
