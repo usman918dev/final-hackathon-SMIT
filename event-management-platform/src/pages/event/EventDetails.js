@@ -6,17 +6,18 @@ import Reviewpage from '../review/Reviewpage';
 export default function EventDetails() {
   const { id } = useParams(); // Get the event ID from the URL
   const dispatch = useDispatch();
-  const event = useSelector((state) => state.events.events.find((e) => e._id === id));
+  // const event = useSelector((state) => state.events.events.find((e) => e._id === id));
+  const event = useSelector((state) => state.events.eventDetails)
   const loading = useSelector((state) => state.events.status === 'loading');
   const error = useSelector((state) => state.events.error);
   const navigate = useNavigate();
 
   useEffect(() => {
     // Only fetch the event if it's not already present in the store
-    if (!event) {
-      dispatch(fetchEventDetails(id)); // Fetch event details if not already present in the store
-    }
-  }, [dispatch, id, event]);
+    // if (!event) {
+    dispatch(fetchEventDetails(id)); // Fetch event details if not already present in the store
+    // }
+  }, [dispatch, id]);
 
   const handleReviewClick = () => {
     navigate(`/event-details/review/${id}`);
@@ -47,3 +48,6 @@ export default function EventDetails() {
     </div>
   );
 }
+
+
+
