@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../redux/slices/authSlice';
 import { MoonLoader } from 'react-spinners';
+import Btn1 from '../../components/submit/Btn1';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const Login = () => {
         setShowForgotPassword(true); // Show the "Forgot Password" link if login fails
       }
     }, 2000);
+    
   };
 
   return (
@@ -50,7 +52,8 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Login</button>
+          {/* <button type="submit">Login</button> */}
+          <Btn1/>
         </form>
       )}
 
