@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -86,4 +86,4 @@ button:hover {
 
 #chk:checked~.signup {
     top: -100%;
-}
+} */
