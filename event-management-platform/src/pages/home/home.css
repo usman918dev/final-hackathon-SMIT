@@ -1,4 +1,4 @@
-/* General Page Styling */
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: #f5f5f5;
@@ -7,7 +7,6 @@ body {
     padding: 0;
   }
   
-  /* Container Styling */
   .event-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -17,8 +16,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
   }
-  
-  /* Event Card Styling */
+ 
   .event-item {
     background: white;
     border-radius: 12px;

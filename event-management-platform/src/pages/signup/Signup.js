@@ -31,8 +31,18 @@ const Signup = () => {
   // }, [isAuthenticated, navigate]);
 
   return (
-    <div className="signupPage">
-      <div className="signup-form">
+    <div className="signupPage mine-container">
+       <span className='form-side-card'>
+        <h2>Welcome to Our Community! 🌟</h2>
+        <p>
+          Join thousands of users and experience the best platform for managing
+          your events and bookings. Stay organized, stay connected!
+        </p>
+        <blockquote>
+          "The journey of a thousand miles begins with a single step." <br/>- Lao Tzu
+        </blockquote>
+      </span>
+      <span className="signup-form form">
         <h2>Sign Up</h2>
         {error && <p className="error">{error}</p>} {/* Display error if signup fails */}
         {loading && <MoonLoader size={30} color="#3498db" />} {/* Show loading spinner */}
@@ -73,7 +83,9 @@ const Signup = () => {
         <p className="login-link">
           Already have an account? <a href="/login">Login Now</a>
         </p>
-      </div>
+      </span>
+     
+
     </div>
   );
 };
