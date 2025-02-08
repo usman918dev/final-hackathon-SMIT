@@ -14,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [showSpinner, setShowSpinner] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false); // New state for forgot password
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -29,46 +29,58 @@ const Login = () => {
         setShowForgotPassword(true); // Show the "Forgot Password" link if login fails
       }
     }, 2000);
-    
+
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      
-      {showSpinner ? (
-        <MoonLoader size={15} color="#3498db" />
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Login</button>
-          {/* <Btn1/> */}
-        </form>
-      )}
+    <div className='login-page'>
+      <div className="login-container ">
+        <h2>Login</h2>
 
-      {error && <p className="error-message">{error}</p>}
-      
-      {showForgotPassword && (
-        <div className="forgot-password-link">
-          <a href="/forgot-password">Forgot your password?</a>
+        {showSpinner ? (
+          <MoonLoader size={15} color="#3498db" />
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <div className='form-group'>
+              <label>Email</label>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className='form-group'>
+
+              <label>Password</label>
+
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+
+            <button type="submit">Login</button>
+            {/* <Btn1/> */}
+          </form>
+        )}
+
+        {error && <p className="error-message">{error}</p>}
+
+        {showForgotPassword && (
+          <div className="forgot-password-link">
+            <a href="/forgot-password">Forgot your password?</a>
+          </div>
+        )}
+
+        <div className="register-now login-link">
+          <p>New user? <a href="/signup">Register now</a></p>
         </div>
-      )}
-      
-      <div className="register-now">
-        <p>New user? <a href="/signup">Register now</a></p>
       </div>
     </div>
+
   );
 };
 

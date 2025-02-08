@@ -3,20 +3,18 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEventDetails } from '../../redux/slices/eventSlice';
 import Reviewpage from '../review/Reviewpage';
+import "./eventDetails.css"; // Import CSS file
+
 export default function EventDetails() {
-  const { id } = useParams(); // Get the event ID from the URL
+  const { id } = useParams();
   const dispatch = useDispatch();
-  // const event = useSelector((state) => state.events.events.find((e) => e._id === id));
-  const event = useSelector((state) => state.events.eventDetails)
+  const event = useSelector((state) => state.events.eventDetails);
   const loading = useSelector((state) => state.events.status === 'loading');
   const error = useSelector((state) => state.events.error);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Only fetch the event if it's not already present in the store
-    // if (!event) {
-    dispatch(fetchEventDetails(id)); // Fetch event details if not already present in the store
-    // }
+    dispatch(fetchEventDetails(id));
   }, [dispatch, id]);
 
   const handleReviewClick = () => {
@@ -28,26 +26,31 @@ export default function EventDetails() {
   }
 
   if (error) {
-    return <div className="event-details-container">{error}</div>;
+    return <div className="event-details-container error-message">{error}</div>;
   }
 
   if (!event) {
-    return <div className="event-details-container">Event not found</div>;
+    return <div className="event-details-container error-message">Event not found</div>;
   }
 
   return (
     <div className="event-details-container">
-      <h1>{event.title}</h1>
-      <p>{event.description}</p>
-      <p>{event.location}</p>
+      {/* Event Image */}
       {event.imageUrl && <img src={event.imageUrl} alt={event.title} className="event-image" />}
 
-      <p>{event.category}</p>
-      <button onClick={handleReviewClick}>Write a Review</button>
+      {/* Event Info */}
+      <div className="event-info">
+        <h1 className="event-title">{event.title}</h1>
+        <p className="event-description">{event.description}</p>
+        <p className="event-location">📍 {event.location}</p>
+        <p className="event-category">📌 {event.category}</p>
+
+        {/* Review Button */}
+        <button className="review-btn" onClick={handleReviewClick}>Write a Review</button>
+      </div>
+
+      {/* Review Section */}
       <Reviewpage id={id} />
     </div>
   );
 }
-
-
-

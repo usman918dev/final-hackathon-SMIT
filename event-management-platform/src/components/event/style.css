@@ -1,0 +1,73 @@
+/* Event Card Container */
+.event-card {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    max-width: 350px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  
+  .event-card:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Positioning Three-Dot Button */
+  .three-dot-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+  }
+  
+  /* Event Image */
+  .event-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  /* Card Content */
+  .event-card-content {
+    padding: 15px;
+  }
+  
+  .event-card-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .event-card-date,
+  .event-card-location {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .event-card-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .event-card {
+      max-width: 100%;
+    }
+  
+    .event-card-title {
+      font-size: 1.3rem;
+    }
+  
+    .three-dot-container {
+      top: 8px;
+      right: 8px;
+    }
+  }
+  

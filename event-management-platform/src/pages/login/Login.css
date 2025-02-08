@@ -31,6 +31,9 @@ body{
     color: white;
     height: 100%;
     max-width: 520px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.127);
+    
 }
 
 .signup-form h2 {
@@ -76,7 +79,7 @@ button {
     font-size: 18px;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    /* transition: 0.3s ease-in-out; */
 }
 
 button:hover {
@@ -119,6 +122,7 @@ button:disabled {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     color: white;
     text-align: center;
+    backdrop-filter: blur(8px);
     font-size: 18px;
     padding: clamp(10px, 5vw, 40px);
     /* border: 2px solid #f1c40f; */
@@ -166,5 +170,33 @@ button:disabled {
     }
     .signup-form{
         padding: 10px;
+    }
+}
+
+/* login css */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    border: 2px solid red;
+}
+.login-container{
+    padding: 5vw;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.2);
+    text-align: center;
+    line-height: 2rem;
+    color: white;
+    min-width: 425px;
+    max-width: 520px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.127);
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:425px){
+    .login-container{
+        min-width: 320px
     }
 }
