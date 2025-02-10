@@ -3,7 +3,7 @@ import api from "./api"; // Import your existing Axios instance
 // Create Event
 export const createEvent = async (eventData) => {
   try {
-    const response = await api.post("/events/create", eventData); 
+    const response = await api.post("/events/create", eventData);
     return response.data;
   } catch (error) {
     console.error("Error creating event:", error.response?.data || error.message);
@@ -14,7 +14,7 @@ export const createEvent = async (eventData) => {
 // Fetch All Events
 export const fetchAllEvents = async () => {
   try {
-    const response = await api.get("/events/all"); 
+    const response = await api.get("/events/all");
     console.log("Response received:", response.data);
     return response.data;
   } catch (error) {
@@ -26,7 +26,7 @@ export const fetchAllEvents = async () => {
 // Fetch Specific Event Details
 export const fetchSpecificEventDetails = async (id) => {
   try {
-    const response = await api.get(`/events/event/${id}`); 
+    const response = await api.get(`/events/event/${id}`);
     console.log("Event data received:", response.data);
     return response.data;
   } catch (error) {
@@ -40,4 +40,11 @@ export const getUserName = async () => {
   console.log(username.data);
 
   return username.data
+}
+
+export const removeEvent = async (id) => {
+  const removeEvent = await api.delete(`/events/deleteevent/${id}`)
+  console.log('reach1');
+  return removeEvent.data;
+
 }

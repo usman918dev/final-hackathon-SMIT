@@ -23,7 +23,12 @@ router.get('/event/:id', authenticateToken, (req, res) => {
   console.log("req.params", id);
   getEvent(id, res); // Pass only the id to the function
 });
+router.delete('/deleteevent/:id', authenticateToken, (req,res) =>{
+  const {id}=req.params;
+  console.log("req.params", id);
 
+
+})
 // Route to create a new review
 router.post('/reviews/:eventId', authenticateToken, createReview);
 

@@ -1,6 +1,7 @@
 import React from "react";
 import ThreeDotButton from "../3dotbtn/ThreeDotBtn";
 import "./style.css"; // Import updated CSS
+import RemoveBtn from "../removeBtn/RemoveBtn";
 
 function EventCard({ event }) {
   return (
@@ -8,6 +9,7 @@ function EventCard({ event }) {
       {/* Three-dot button positioned at the top-right */}
       <div className="three-dot-container">
         <ThreeDotButton />
+        <RemoveBtn/>
       </div>
 
       {/* Event Image */}

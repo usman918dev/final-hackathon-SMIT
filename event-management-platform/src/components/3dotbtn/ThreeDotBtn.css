@@ -18,8 +18,8 @@
     position: absolute;
     top: 30px; /* Position below the button */
     right: 0;
-    border: 1px solid #ddd;
-    background-color: white;
+    border: 1px solid #000000;
+    background-color: rgb(249, 9, 9);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px 0;
     width: 150px;
@@ -42,4 +42,7 @@
   .dropdown-menu ul li:hover {
     background-color: #f1f1f1;
   }
-  
+  button{
+    color: black;
+    background-color: red;
+  }

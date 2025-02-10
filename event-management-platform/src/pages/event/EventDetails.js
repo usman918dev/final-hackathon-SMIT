@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchEventDetails } from '../../redux/slices/eventSlice';
 import Reviewpage from '../review/Reviewpage';
 import "./eventDetails.css"; // Import CSS file
+import RemoveBtn from '../../components/removeBtn/RemoveBtn';
 
 export default function EventDetails() {
   const { id } = useParams();
@@ -44,7 +45,7 @@ export default function EventDetails() {
         <p className="event-description">{event.description}</p>
         <p className="event-location">📍 {event.location}</p>
         <p className="event-category">📌 {event.category}</p>
-
+      <RemoveBtn/>
         {/* Review Button */}
         <button className="review-btn" onClick={handleReviewClick}>Write a Review</button>
       </div>
