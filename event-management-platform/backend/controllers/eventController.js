@@ -3,7 +3,7 @@ const Event = require('../models/Event');
 // Controller to handle event creation
 console.log("jhgfh");
 const createEvent = async (req, res) => {
-  const { title, description, date, location, category, imageUrl  } = req.body;
+  const { title, description, date, location, category, imageUrl } = req.body;
 
   if (!title || !description || !date || !location || !category) {
     return res.status(400).json({ success: false, message: 'All fields are required' });
@@ -59,5 +59,20 @@ const getEvent = async (id, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+const deleteevent = async (id, res) => {
+  try {
+    console.log(id);
+    
+    const delitem = await Event.findByIdAndDelete(id);
+    console.log("done");
+    
+    res.status(200).json('deleted');
 
-module.exports = { createEvent, getEvents, getEvent };
+  }
+  catch {
+    console.error('Error deleting event:', error.message);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+}
+
+module.exports = { createEvent, getEvents, getEvent, deleteevent };

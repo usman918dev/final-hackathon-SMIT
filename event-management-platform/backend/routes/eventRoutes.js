@@ -1,5 +1,5 @@
 const express = require('express');
-const { createEvent, getEvents, getEvent } = require('../controllers/eventController');
+const { createEvent, getEvents, getEvent, deleteevent } = require('../controllers/eventController');
 const { createReview, getReviews, getUsername } = require('../controllers/reviewController');
 const authenticateToken = require('../middleware/authMiddleware');
 
@@ -23,10 +23,10 @@ router.get('/event/:id', authenticateToken, (req, res) => {
   console.log("req.params", id);
   getEvent(id, res); // Pass only the id to the function
 });
-router.delete('/deleteevent/:id', authenticateToken, (req,res) =>{
-  const {id}=req.params;
+router.delete('/deleteevent/:id', authenticateToken, (req, res) => {
+  const { id } = req.params;
   console.log("req.params", id);
-
+  deleteevent(id, res);
 
 })
 // Route to create a new review

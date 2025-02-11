@@ -9,7 +9,7 @@ function EventCard({ event }) {
       {/* Three-dot button positioned at the top-right */}
       <div className="three-dot-container">
         <ThreeDotButton />
-        <RemoveBtn/>
+        {/* <RemoveBtn/> */}
       </div>
 
       {/* Event Image */}

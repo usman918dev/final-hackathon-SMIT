@@ -45,7 +45,7 @@ export default function EventDetails() {
         <p className="event-description">{event.description}</p>
         <p className="event-location">📍 {event.location}</p>
         <p className="event-category">📌 {event.category}</p>
-      <RemoveBtn/>
+        <RemoveBtn />
         {/* Review Button */}
         <button className="review-btn" onClick={handleReviewClick}>Write a Review</button>
       </div>
