@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import storage from '../../config/firebaseConfig';
 import { createNewEvent } from '../../redux/slices/eventSlice';
-
+import { useNavigate } from 'react-router-dom';
 const CreateEvent = () => {
   const [formData, setFormData] = useState({
     title: '',
@@ -12,7 +12,7 @@ const CreateEvent = () => {
     location: '',
     category: '',
   });
-
+  const navigate = useNavigate();
   const [image, setImage] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -71,6 +71,7 @@ const CreateEvent = () => {
       const updatedFormData = { ...formData, imageUrl };
 
       await dispatch(createNewEvent(updatedFormData));
+      navigate('/home')
 
       setLoading(false);
       setImage(null);
@@ -121,7 +122,7 @@ const CreateEvent = () => {
             name="date"
             value={formData.date}
             onChange={handleChange}
-            required
+            // required
           />
         </div>
         <div className="form-group">

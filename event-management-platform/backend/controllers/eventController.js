@@ -61,11 +61,9 @@ const getEvent = async (id, res) => {
 };
 const deleteevent = async (id, res) => {
   try {
-    console.log(id);
-    
-    const delitem = await Event.findByIdAndDelete(id);
+    await Event.findByIdAndDelete(id);
     console.log("done");
-    
+
     res.status(200).json('deleted');
 
   }

@@ -19,6 +19,7 @@ export const createNewEvent = createAsyncThunk('events/createNewEvent', async (e
 
   return response;
 });
+
 export const removethisEvent = createAsyncThunk('events/removethisEvent', async (id) => {
   console.log('deleted');
   const response = await removeEvent(id)
@@ -74,11 +75,11 @@ const eventsSlice = createSlice({
       // Create a new event
       .addCase(createNewEvent.pending, (state) => {
         state.loading = true;
-        state.status = 'loading';
+        // state.status = 'loading';
       })
       .addCase(createNewEvent.fulfilled, (state, action) => {
         state.events.push(action.payload);
-        state.status = 'succeeded';
+        // state.status = 'succeeded';
         state.loading = false;
       })
       .addCase(createNewEvent.rejected, (state, action) => {
@@ -86,8 +87,10 @@ const eventsSlice = createSlice({
         state.status = 'failed';
         state.loading = false;
       })
-      .addCase(removethisEvent.fulfilled, (state,action)=>{
-        state.events = [];
+      .addCase(removethisEvent.fulfilled, (state)=>{
+        // state.events = [];
+        console.log("succesd");
+        
       });
   },
 });

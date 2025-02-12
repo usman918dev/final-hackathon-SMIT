@@ -91,3 +91,7 @@
     padding: 8px;
   }
 }
+.create-eventBtn{
+  color: white;
+  font-size: 3rem;
+}
