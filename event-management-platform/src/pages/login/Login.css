@@ -126,6 +126,9 @@ button:disabled {
     font-size: 18px;
     padding: clamp(10px, 5vw, 40px);
     /* border: 2px solid #f1c40f; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
 }
 
 .form-side-card h2 {
@@ -158,10 +161,14 @@ button:disabled {
 
     .signup-form,
     .form-side-card {
-        margin: 10px;
+        /* margin: 10px; */
         min-width: 100%;
         max-width: 480px;
         min-height: 645px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
@@ -201,3 +208,7 @@ button:disabled {
         min-width: 320px
     }
 }
+
+
+
+
