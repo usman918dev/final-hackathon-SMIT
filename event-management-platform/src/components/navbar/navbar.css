@@ -3,24 +3,59 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #101010;
   color: #fff;
+  border-bottom: 2px solid #1d93ad;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px rgba(6, 123, 144, 0.647);
+  min-height: 90px;
 }
 
 .navbar-logo img {
   height: 40px;
 }
 
+.logo-text {
+  text-shadow: 2px 2px 2px #0a778a, -2px -2px 6px rgb(71, 195, 211);
+  text-decoration: wavy;
+  font-size: 2em;
+}
+
 .navbar-search input {
   padding: 5px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #26bbdc;
+  color: white;
+  background: transparent;
+}
+
+.navbar-search input:hover {
+  background-color: #3593a80e;
+  border: 1px solid rgb(81, 246, 255);
+  box-shadow: 1px 1px 4px #3ec1df;
+
+}
+
+.navbar-search input:focus {
+  background-color: #193f47;
+  border: 1px solid #1d93ad;
+  outline: none;
+  border: 2px solid rgb(81, 246, 255);
 }
 
 .navbar-location select {
   padding: 5px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(81, 246, 255);
+  background: transparent;
+  color: white;
+  color: rgb(81, 246, 255);
+
+}
+
+.navbar-location select :focus {
+  border: 1px solid rgb(81, 246, 255);
+  outline: none;
 }
 
 .navbar-logout button {
@@ -91,7 +126,12 @@
     padding: 8px;
   }
 }
-.create-eventBtn{
-  color: white;
-  font-size: 3rem;
+
+.create-eventBtn {
+  color: rgb(255, 255, 255) !important;
+  font-weight: 100;
+  text-shadow: 1px 1px 4px rgb(93, 228, 255);
+  text-decoration: none;
+  font-size: 1.5rem;
 }
+

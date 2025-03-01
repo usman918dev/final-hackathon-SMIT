@@ -19,9 +19,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img  alt="Logo" />
+        {/* <img  alt="Logo" /> */}
+        <h1 className='logo-text'>Eventure</h1> 
       </div>
       <div className="navbar-search">
+        <label htmlFor="search">Search</label>
         <input type="text" placeholder="Search events..." />
       </div>
       <div className="navbar-location">
@@ -32,7 +34,8 @@ const Navbar = () => {
           {/* Add more locations as needed */}
         </select>
       </div>
-      <div className='create-eventBtn'><a href='./home/create-event'>+</a></div>
+      <div className='create-eventBtn'><a href='./home/create-event' className='create-eventBtn'>create event +</a></div>
+      {/* <div className='create-eventBtn'> </div> */}
       <div className="navbar-logout">
         {/* <button onClick={handleLogout}>Logout</button> */}
         {/* <UserProfile/> */}

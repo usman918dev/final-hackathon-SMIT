@@ -1,4 +1,9 @@
 /* Event Card Container */
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
 .event-card {
     position: relative;
     background: white;
@@ -6,13 +11,14 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-    max-width: 350px;
-    text-align: center;
-    padding-bottom: 10px;
+    max-width: 390px;
+    text-align: left;
+    min-height: 510px;
+    /* padding-bottom: 10px; */
   }
   
   .event-card:hover {
-    transform: scale(1.03);
+    /* transform: scale(1.03); */
   }
   
   /* Positioning Three-Dot Button */
@@ -26,9 +32,9 @@
   /* Event Image */
   .event-card-img {
     width: 100%;
-    height: 180px;
+    min-height: 390px;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    /* border-radius: 10px 10px 0 0; */
   }
   
   /* Card Content */
@@ -53,12 +59,15 @@
     font-size: 0.9rem;
     color: #555;
     margin-top: 10px;
+    height: 36px;
+    overflow: hidden;
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
     .event-card {
-      max-width: 100%;
+      max-width: 425px;
+      padding: 0px;
     }
   
     .event-card-title {
@@ -70,4 +79,10 @@
       right: 8px;
     }
   }
-  
+  @media (max-width: 425px){
+    .event-card{
+      max-width: 100%;
+
+    }
+
+  }

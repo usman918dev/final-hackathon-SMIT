@@ -11,12 +11,16 @@ const userRoute = require('./routes/userRoute');
 const app = express();
 
 connectDB();
+console.log("db connected");
 
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+// console.log(' i am also working greqt here');
+
 app.use('/api/events', eventRoutes);
+// console.log(' i also ');
 app.use('/api/user', userRoute);
 
 const PORT = process.env.PORT || 5000;

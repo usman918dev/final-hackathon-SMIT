@@ -1,0 +1,77 @@
+/* .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000000;
+} */
+
+.cube {
+  margin-top: 100px;
+  margin-right: 80px;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  box-shadow: 2px rgb(0, 0, 0);
+
+  transform-style: preserve-3d;
+
+  animation: rotate 6s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(rgb(0, 0, 0), aqua);
+
+
+}
+
+.front {
+  transform: translateZ(-100px);
+}
+
+.back {
+  transform: translateZ(100px);
+}
+
+.right {
+  transform: translateY(100px) rotateX(90deg);
+}
+
+.left {
+  transform: translateY(-100px) rotateX(90deg);
+  background: rgb(25, 23, 23);
+
+}
+
+.top {
+  transform: translateX(100px) rotateY(90deg);
+}
+
+.bottom {
+  transform: translateX(-100px) rotateY(90deg);
+}
+
+
+.light {
+  transform: rotateX(90deg) translateZ(-220px);
+  background: linear-gradient(aqua, aqua);
+  box-shadow: 5px 5px 5px aqua, -5px -5px 10px rgb(234, 0, 255);
+  box-shadow: 0px 0px 10px rgb(234, 0, 255);
+
+  filter: blur(40px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+
+}
