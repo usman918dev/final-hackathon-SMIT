@@ -6,7 +6,7 @@
 }
 .event-card {
     position: relative;
-    background: white;
+    background: rgb(0, 0, 0);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,24 +40,30 @@
   /* Card Content */
   .event-card-content {
     padding: 15px;
+    background-color: rgb(20, 18, 18);
+    color: aliceblue;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
   }
   
   .event-card-title {
     font-size: 1.5rem;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 5px;
   }
   
   .event-card-date,
   .event-card-location {
     font-size: 1rem;
-    color: #666;
+    color: #fffbfb;
     margin: 5px 0;
   }
   
   .event-card-description {
     font-size: 0.9rem;
-    color: #555;
+    color: #ffffff;
     margin-top: 10px;
     height: 36px;
     overflow: hidden;
@@ -68,6 +74,7 @@
     .event-card {
       max-width: 425px;
       padding: 0px;
+  
     }
   
     .event-card-title {

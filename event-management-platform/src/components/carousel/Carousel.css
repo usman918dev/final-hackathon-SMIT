@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.with2 {
+    width: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.with {
+    width: 320px;
+    height: 400px;
+    margin-left: 75px;
+    /* object-fit: cover; */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+ 
+    box-shadow: 4px 2px 20px rgb(25, 207, 217);
+    border-radius: 10px;
+    border: 1px solid rgb(60, 147, 174);
+    opacity: 0.8;
+}
+
+@media (max-width:768px) {
+    .with {
+        width: 100vw;
+        margin: auto;
+    }
+
+    .with1 {
+        width: 100%;
+    }
+}

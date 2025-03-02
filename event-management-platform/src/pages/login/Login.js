@@ -63,6 +63,7 @@ const Login = () => {
             </div>
 
             <button type="submit">Login</button>
+           
             {/* <Btn1/> */}
           </form>
         )}
@@ -77,6 +78,7 @@ const Login = () => {
 
         <div className="register-now login-link">
           <p>New user? <a href="/signup">Register now</a></p>
+          <p><a href="/home">Guest login</a></p>
         </div>
       </div>
     </div>

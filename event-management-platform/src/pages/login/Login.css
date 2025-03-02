@@ -8,6 +8,7 @@
 body{
     background-image: url('../../assets/R.jpeg');
     background-size: cover;
+    backdrop-filter: brightness(0.5);
 }
 .signupPage {
     display: flex;

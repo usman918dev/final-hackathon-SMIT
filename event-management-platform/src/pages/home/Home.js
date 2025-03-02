@@ -8,6 +8,7 @@ import { getUserName } from "../../services/events";
 import "./home.css";
 import Welcome from "../../components/welcome/Welcome";
 import Cube from "../../components/cube/Cube";
+import Carousel from "../../components/carousel/Carousel";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -35,8 +36,10 @@ const Home = () => {
     <div className="home-container">
       <Navbar />
       <div className="for">
-      <Welcome />
-      <Cube/></div>
+        <Welcome />
+        {/* <Cube/> */}
+        <Carousel />
+      </div>
       <div className="content">
         <h2 className="heading">🎉 Upcoming Events</h2>
 
@@ -61,7 +64,10 @@ const Home = () => {
         </button>
         {username && <h2 className="username-display">👤 Hello, {username}!</h2>}
       </div>
+
+
     </div>
+
   );
 };
 

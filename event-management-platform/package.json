@@ -8,6 +8,7 @@
     "cra-template": "1.2.0",
     "firebase": "^11.2.0",
     "framer-motion": "^12.4.2",
+    "lucide-react": "^0.477.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
@@ -15,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-spinners": "^0.15.0",
     "redux-persist": "^6.0.0",
+    "swiper": "^11.2.4",
     "vitals": "^0.1.2",
     "word-list": "^4.1.0"
   },

@@ -5,6 +5,7 @@
     color: aliceblue;
     margin: 100px 0 200px 80px;
     background: transparent;
+    width: auto;
 }
 
 .welcome-Heading {
@@ -12,6 +13,7 @@
     color: #ffffff;
     text-shadow: 2px 2px 8px rgb(53, 141, 159);
     margin-bottom: 20px;
+    /* width: 70%; */
 }
 
 .getStart-btn {
@@ -40,6 +42,8 @@
     .WelComeContainer {
         text-align: center;
         margin: 100px 0 0 0;
+        justify-content: center;
+        width: 100vw;
     }
     .welcome-Heading {
         font-size: 2rem;

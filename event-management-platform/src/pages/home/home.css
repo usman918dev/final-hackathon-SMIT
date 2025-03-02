@@ -26,8 +26,9 @@
 
 .heading {
   font-size: 2rem;
-  color: #333;
+  color: #fbffff;
   margin-bottom: 20px;
+  text-shadow: 1.5px 1.5px 6px rgb(123, 251, 255);
 }
 
 /* Event Grid Layout */
@@ -111,11 +112,15 @@
   .username-btn {
     font-size: 0.9rem;
   }
+  .for{
+    display: block;
+  }
+  
 }
 
 
 .for{
   display: flex;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
 }

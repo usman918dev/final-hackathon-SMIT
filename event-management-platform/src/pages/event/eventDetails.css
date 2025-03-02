@@ -1,4 +1,4 @@
-/* Event Details Page */
+/* 
 .event-details-container {
     max-width: 800px;
     margin: 40px auto;
@@ -39,7 +39,6 @@
     margin: 5px 0;
   }
   
-  /* Review Button */
   .review-btn {
     background: #007bff;
     color: white;
@@ -47,7 +46,6 @@
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    /* transition: background 0.3s ease; */
     font-size: 1rem;
   }
   
@@ -55,7 +53,6 @@
     background: #0056b3;
   }
   
-  /* Error Message */
   .error-message {
     color: red;
     font-size: 1.2rem;
@@ -63,7 +60,6 @@
     text-align: center;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .event-details-container {
       padding: 15px;
@@ -77,4 +73,320 @@
       font-size: 1rem;
     }
   }
-  
+   */
+
+
+/* 
+   .event-details-container{
+    max-width: 800px;
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+   }
+   .event-image{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+   }
+    .event-info{
+      padding: 15px;
+    }
+    .event-title{
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .event-description{
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .event-location, .event-category{
+      font-size: 1rem;
+      color: #d5d5d5;
+      margin: 5px 0;
+    }
+    .review-btn{
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .review-btn:hover{
+      background: #0056b3;
+    }
+    .error-message{
+      color: red;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    @media (max-width: 768px){
+      .event-details-container{
+        padding: 15px;
+      }
+      .event-title{
+        font-size: 1.5rem;
+      }
+      .event-description{
+        font-size: 1rem;
+      }
+    } */
+
+    /* margin: 40px auto; */
+/* Container Styling *//* Container Styling */
+.event-details-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #000; /* Black background */
+  color: #fff; /* White text */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 4px 15px rgba(0, 162, 255, 0.4); /* Blue glow effect */
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Image Section */
+.event-image-container {
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0, 162, 255, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-image:hover {
+  transform: scale(1.05);
+}
+
+/* Event Info */
+.event-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.event-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00a2ff; /* Bright blue */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.event-description {
+  font-size: 16px;
+  color: #ccc; /* Light gray for contrast */
+  margin: 10px 0;
+}
+
+/* Event Location & Category */
+.event-location,
+.event-category {
+  font-size: 15px;
+  color: #00a2ff; /* Blue accents */
+  margin: 5px 0;
+}
+
+/* Buttons */
+.event-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.review-btn {
+  background: #00a2ff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 162, 255, 0.4);
+  transition: 0.3s ease-in-out;
+}
+
+.review-btn:hover {
+  background: #0085d4; /* Darker blue */
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 162, 255, 0.6);
+}
+/* Event Review Container */
+.event-details {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 162, 255, 0.4); /* Blue glow */
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Review Title */
+.review-title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: #00a2ff; /* Blue title */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* No Reviews Message */
+.no-reviews {
+  font-size: 16px;
+  text-align: center;
+  color: #ccc;
+}
+
+/* Individual Review Card */
+.review-card {
+  background: rgba(255, 255, 255, 0.05); /* Light transparent white */
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0px 2px 8px rgba(0, 162, 255, 0.3); /* Blue glow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.review-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 4px 12px rgba(0, 162, 255, 0.5);
+}
+
+/* Review User Name */
+.review-user {
+  font-size: 16px;
+  font-weight: bold;
+  color: #00a2ff; /* Blue accent */
+}
+
+/* Review Comment */
+.review-comment {
+  font-size: 14px;
+  color: #ddd;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+/* Review Form Container */
+.review-form {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 162, 255, 0.4); /* Blue glow */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Form Title */
+.form-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00a2ff; /* Blue accent */
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Error & Success Messages */
+.error-message {
+  color: #ff4d4d; /* Red error */
+  text-align: center;
+  font-size: 14px;
+}
+
+.success-message {
+  color: #4caf50; /* Green success */
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ccc;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input Fields */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #00a2ff;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-input:focus {
+  border-color: #0085d4;
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 162, 255, 0.5);
+}
+
+/* Textarea */
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background: #00a2ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 162, 255, 0.4);
+}
+
+.submit-btn:hover {
+  background: #0085d4;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 14px rgba(0, 162, 255, 0.6);
+}
+
+.submit-btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
