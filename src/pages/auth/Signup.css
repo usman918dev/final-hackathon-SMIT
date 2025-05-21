@@ -10,7 +10,7 @@ body{
     background-size: cover;
     backdrop-filter: brightness(0.5);
 }
-.signupPage {
+.su-page {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -21,70 +21,18 @@ body{
 }
 
 /* Signup Form Container */
-.signup-form {
+.su-form {
     flex: 1;
     min-width: 50%;
     padding: 5vw;
     border-radius: 12px;
     box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.2);
     text-align: center;
-    /* border: 2px solid #f1c40f; */
     color: white;
     height: 100%;
     max-width: 520px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.127);
-    
-}
-
-.signup-form h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-/* Form Fields */
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 16px;
-}
-
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Signup Button */
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background: #2ecc71;
-    color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    /* transition: 0.3s ease-in-out; */
-}
-
-button:hover {
-    background: #27ae60;
 }
 
 button:disabled {
@@ -93,28 +41,28 @@ button:disabled {
 }
 
 /* Error Message */
-.error {
+.su-error {
     color: #e74c3c;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
 /* Login Link */
-.login-link {
+.su-login-link {
     margin-top: 15px;
     font-size: 14px;
 }
 
-.login-link a {
+.su-login-link a {
     color: #f1c40f;
     text-decoration: none;
 }
 
-.login-link a:hover {
+.su-login-link a:hover {
     text-decoration: underline;
 }
 
-.form-side-card {
+.su-side-card {
     flex: 1;
     min-width: 50%;
     min-height: 100%;
@@ -126,25 +74,21 @@ button:disabled {
     backdrop-filter: blur(8px);
     font-size: 18px;
     padding: clamp(10px, 5vw, 40px);
-    /* border: 2px solid #f1c40f; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
 }
 
-.form-side-card h2 {
+.su-side-card h2 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #f1c40f;
 }
 
-.form-side-card p {
+.su-side-card p {
     font-size: 16px;
     line-height: 2.4rem;
     margin-bottom: 30px;
 }
 
-.form-side-card blockquote {
+.su-side-card blockquote {
     font-style: italic;
     color: #ecf0f1;
     border-left: 3px solid #f1c40f;
@@ -154,15 +98,14 @@ button:disabled {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .signupPage {
+    .su-page {
         flex-direction: column;
         padding: 10px;
         height: auto;
     }
 
-    .signup-form,
-    .form-side-card {
-        /* margin: 10px; */
+    .su-form,
+    .su-side-card {
         min-width: 100%;
         max-width: 480px;
         min-height: 645px;
@@ -174,39 +117,11 @@ button:disabled {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .signupPage {
+    .su-page {
         padding: 20px;
     }
-    .signup-form{
+    .su-form{
         padding: 10px;
-    }
-}
-
-/* login css */
-.login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    border: 2px solid red;
-}
-.login-container{
-    padding: 5vw;
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.2);
-    text-align: center;
-    line-height: 2rem;
-    color: white;
-    min-width: 425px;
-    max-width: 520px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.127);
-    display: flex;
-    flex-direction: column;
-}
-@media (max-width:425px){
-    .login-container{
-        min-width: 320px
     }
 }
 

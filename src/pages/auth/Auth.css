@@ -1,0 +1,229 @@
+/* Full-page background */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-page {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(-45deg, rgb(8, 57, 85), rgb(11, 14, 17));
+    background-size: cover;
+    background-image: url('../../assets/R.jpeg');
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Glass container */
+.login-container {
+    width: 380px;
+    padding: 40px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    color: #ffffff;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Headings */
+.login-container h2 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+/* Form layout */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    backdrop-filter: blur(4px);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 153, 255, 0.3);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(0, 153, 255, 0.6);
+}
+
+/* Error message */
+.error-message {
+    color: #ff6b6b;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+/* Forgot password link */
+.forgot-password-link a {
+    color: #d0e7ff;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* Register section */
+.login-link {
+    margin-top: 24px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #d0e7ff;
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body {
+    background-image: url('../../assets/R.jpeg');
+    background-size: cover;
+    backdrop-filter: brightness(0.5);
+}
+
+.su-page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: baseline;
+    justify-content: center;
+    padding: 60px;
+    gap: 20px;
+}
+
+/* Signup Form Container */
+.su-form {
+    flex: 1;
+    min-width: 50%;
+    padding: 5vw;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+    color: white;
+    height: 100%;
+    max-width: 520px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+}
+
+button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.su-side-card {
+    flex: 1;
+    min-width: 50%;
+    min-height: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    font-size: 18px;
+    padding: clamp(10px, 5vw, 40px);
+}
+
+.su-side-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f1c40f;
+}
+
+.su-side-card p {
+    font-size: 16px;
+    line-height: 2.4rem;
+    margin-bottom: 30px;
+}
+
+.su-side-card blockquote {
+    font-style: italic;
+    color: #ecf0f1;
+    border-left: 3px solid #f1c40f;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .su-page {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    .su-form,
+    .su-side-card {
+        min-width: 100%;
+        max-width: 480px;
+        min-height: 645px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .su-page {
+        padding: 20px;
+    }
+
+    .su-form {
+        padding: 10px;
+    }
+}

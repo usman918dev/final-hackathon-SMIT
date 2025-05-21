@@ -1,11 +1,9 @@
-// 
-
-
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signup } from "../../redux/slices/authSlice";
-import { MoonLoader } from "react-spinners"; // Import spinner
+import { MoonLoader } from "react-spinners";
+import "./Auth.css"; // Import your CSS file
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -24,15 +22,15 @@ const Signup = () => {
   };
 
   // Redirect user if authenticated
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     navigate("/home");
-  //   }
-  // }, [isAuthenticated, navigate]);
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/home");
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
-    <div className="signupPage mine-container">
-       <span className='form-side-card'>
+    <div className="su-page su-mine-container">
+      <span className='su-side-card'>
         <h2>Welcome to Our Community! 🌟</h2>
         <p>
           Join thousands of users and experience the best platform for managing
@@ -42,12 +40,12 @@ const Signup = () => {
           "The journey of a thousand miles begins with a single step." <br/>- Lao Tzu
         </blockquote>
       </span>
-      <span className="signup-form form">
+      <span className="su-form su-form-main">
         <h2>Sign Up</h2>
-        {error && <p className="error">{error}</p>} {/* Display error if signup fails */}
+        {error && <p className="error-message">{error}</p>} {/* Display error if signup fails */}
         {loading && <MoonLoader size={30} color="#3498db" />} {/* Show loading spinner */}
 
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className="su-form-main">
           <div className="form-group">
             <label htmlFor="username">Username:</label>
             <input
@@ -80,12 +78,10 @@ const Signup = () => {
           </button>
         </form>
 
-        <p className="login-link">
+        <p className="register-now login-link">
           Already have an account? <a href="/login">Login Now</a>
         </p>
       </span>
-     
-
     </div>
   );
 };
