@@ -7,7 +7,6 @@ import UserProfile from "../../components/userprofile/UserProfile";
 import { getUserName } from "../../services/events";
 import "./home.css";
 import Welcome from "../../components/welcome/Welcome";
-import Cube from "../../components/cube/Cube";
 import Carousel from "../../components/carousel/Carousel";
 
 const Home = () => {
