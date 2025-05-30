@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; 
 import axios from 'axios';
 import ReviewForm from '../../components/ReviewForm';
+import '../event/eventDetails.css'; // Import glassmorphism CSS
 
 const EventDetails = () => {
   const [reviews, setReviews] = useState([]);
@@ -38,26 +39,35 @@ const EventDetails = () => {
   }, [eventId]);
 
   return (
-    <div className="event-details">
-      <h2>Event Reviews</h2>
-      {error ? (
-        <p style={{ color: 'red' }}>{error}</p> // Display error message
-      ) : reviews.length === 0 ? (
-        <p>No reviews yet</p>
-      ) : (
-        reviews.map((review) => (
-          <div key={review._id} className="review">
-            <p>
-              <strong>
-                {review.userId?.name || 'Anonymous'} {/* Safely access user name */}
-              </strong>{' '}
-              rated {review.rating}/5
-            </p>
-            <p>{review.comment}</p>
-          </div>
-        ))
-      )}
-      {/* <ReviewForm eventId={eventId} /> */}
+    <div className="review-glass-container">
+      <h2 className="review-glass-title">Event Reviews</h2>
+      <div className="review-glass-form-section">
+        <h3 className="review-glass-form-title">Write a Review</h3>
+        <div className="review-glass-form-card">
+          <ReviewForm eventId={eventId} />
+        </div>
+      </div>
+      <div className="review-glass-list">
+        {error ? (
+          <p className="review-glass-error">{error}</p>
+        ) : reviews.length === 0 ? (
+          <p className="review-glass-empty">No reviews yet</p>
+        ) : (
+          reviews.map((review) => (
+            <div key={review._id} className="review-glass-card">
+              <div className="review-glass-header">
+                <span className="review-glass-user">
+                  {review.userId?.name || 'Anonymous'}
+                </span>
+                <span className="review-glass-rating">
+                  <span className="review-glass-star">★</span> {review.rating}/5
+                </span>
+              </div>
+              <p className="review-glass-comment">{review.comment}</p>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 };

@@ -1,3 +1,19 @@
 .removeBtn {
-    color: black;
+    background: rgba(255, 76, 76, 0.18);
+    color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.08);
+    backdrop-filter: blur(6px);
+    transition: background 0.2s, color 0.2s;
+    margin-right: 8px;
+}
+
+.removeBtn:hover {
+    background: #e74c3c;
+    color: #fff;
 }

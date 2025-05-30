@@ -1,0 +1,102 @@
+.review-form {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 24px 28px;
+    color: #fff;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.review-form h3 {
+    color: #f1c40f;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.review-form .form-group {
+    margin-bottom: 18px;
+}
+
+.review-form label {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    resize: vertical;
+}
+
+.review-form textarea {
+    min-height: 80px;
+    max-height: 200px;
+}
+
+.review-form select:focus,
+.review-form textarea:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #f1c40f;
+}
+
+.review-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2ecc71;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+.review-form button[type="submit"]:hover {
+    background: #27ae60;
+}
+
+.review-form .error {
+    color: #e74c3c;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+    text-align: center;
+}
+
+.review-form .success {
+    color: #2ecc71;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .review-form {
+        padding: 12px 6px;
+        max-width: 98vw;
+    }
+}

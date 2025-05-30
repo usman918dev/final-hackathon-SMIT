@@ -80,7 +80,7 @@ button[type="submit"] {
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    
 }
 
 button[type="submit"]:hover {

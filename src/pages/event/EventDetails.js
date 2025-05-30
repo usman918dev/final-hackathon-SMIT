@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEventDetails } from '../../redux/slices/eventSlice';
 import Reviewpage from '../review/Reviewpage';
-import "./eventDetails.css"; // Import CSS file
+import "./eventDetails.css";
 import RemoveBtn from '../../components/removeBtn/RemoveBtn';
 
 export default function EventDetails() {
@@ -23,31 +23,32 @@ export default function EventDetails() {
   };
 
   if (loading) {
-    return <div className="event-details-container">Loading...</div>;
+    return <div className="event-glass-container"><div className="event-glass-loading">Loading...</div></div>;
   }
 
   if (error) {
-    return <div className="event-details-container error-message">{error}</div>;
+    return <div className="event-glass-container"><div className="event-glass-error">{error}</div></div>;
   }
 
   if (!event) {
-    return <div className="event-details-container error-message">Event not found</div>;
+    return <div className="event-glass-container"><div className="event-glass-error">Event not found</div></div>;
   }
 
   return (
-    <div className="event-details-container">
+    <div className="event-glass-container">
       {/* Event Image */}
-      {event.imageUrl && <img src={event.imageUrl} alt={event.title} className="event-image" />}
+      {event.imageUrl && <img src={event.imageUrl} alt={event.title} className="event-glass-image" />}
 
       {/* Event Info */}
-      <div className="event-info">
-        <h1 className="event-title">{event.title}</h1>
-        <p className="event-description">{event.description}</p>
-        <p className="event-location">📍 {event.location}</p>
-        <p className="event-category">📌 {event.category}</p>
-        <RemoveBtn />
-        {/* Review Button */}
-        <button className="review-btn" onClick={handleReviewClick}>Write a Review</button>
+      <div className="event-glass-info">
+        <h1 className="event-glass-title">{event.title}</h1>
+        <p className="event-glass-description">{event.description}</p>
+        <p className="event-glass-location">📍 {event.location}</p>
+        <p className="event-glass-category">📌 {event.category}</p>
+        <div className="event-glass-actions">
+          <RemoveBtn />
+          <button className="event-glass-review-btn" onClick={handleReviewClick}>Write a Review</button>
+        </div>
       </div>
 
       {/* Review Section */}

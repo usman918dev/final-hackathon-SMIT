@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import submitReview from '../services/reviewService'; // Import the new service
-
+import "./ReviewForm.css"
 const ReviewForm = () => {
   const { id: eventId } = useParams(); // Get the event ID from the URL
   const navigate = useNavigate();
