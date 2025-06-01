@@ -1,4 +1,5 @@
 import React from "react";
+import StatsSection from "./components/figma/M";
 
 // Statistic Item Component
 function StatisticItem({ value, suffix, description }) {
@@ -68,6 +69,7 @@ function App() {
     <main className="flex relative flex-col flex-1 gap-24 items-start pt-36 max-md:gap-16 max-md:pt-24 max-sm:gap-10 max-sm:pt-16 min-h-screen bg-black text-white">
       <HeroSection />
       <StatisticsSection />
+      <StatsSection />
     </main>
   );
 }
