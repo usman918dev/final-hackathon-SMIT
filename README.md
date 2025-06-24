@@ -62,12 +62,21 @@ To run this project locally, follow these steps:
 5. **Open the application**:
     - Open your browser and navigate to `http://localhost:3000`
 
-
-###Or 
 ## Online Preview
 
 You can preview the application online at the following link:
 
-[Event Management Platform](https://your-deployment-url.com)
+[Event Management Platform](event-site-918.surge.sh)
+
+---
+
+## Note for Full Functionality
+
+To use all features (event creation, authentication, reviews, etc.), you must:
+- Set up and run the backend server (see step 4 above)
+- Connect the backend to a MongoDB database (see step 3 above)
+- Ensure both frontend and backend are running and properly configured
+
+The online preview shows the frontend UI only. Backend/API features require a working backend and database connection.
 
 
