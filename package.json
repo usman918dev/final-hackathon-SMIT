@@ -8,6 +8,7 @@
     "cra-template": "1.2.0",
     "firebase": "^11.2.0",
     "framer-motion": "^12.4.2",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -24,8 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://osmanbey918.github.io/final-hackathon-SMIT",
   "eslintConfig": {
     "extends": [
       "react-app",
