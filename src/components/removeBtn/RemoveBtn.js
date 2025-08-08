@@ -11,10 +11,7 @@ export default function RemoveBtn() {
 
     const { id } = useParams();
     const removeBtnHandler = async () => {
-        // await removeEvent(id)
         await dispatch(removethisEvent(id))
-        console.log("hellousman");
-        console.log(id);
         navigate('/home')
     }
     return (
