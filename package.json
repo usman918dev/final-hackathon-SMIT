@@ -33,7 +33,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://osmanbey918.github.io/final-hackathon-SMIT",
+  "homepage": "https://usman918dev.github.io/final-hackathon-SMIT",
   "eslintConfig": {
     "extends": [
       "react-app",
